@@ -14,7 +14,6 @@ func TestAddIncrementsSize(t *testing.T) {
 	cList := NewClusterList()
 	cList.Add(&v.Vertex{12.2, 13.4})
 	if cList.Len() != 1 {
-		println("NODSFOSDFSDF", cList.Len())
 		t.Errorf("Cluster length is not 1 it is = ")
 	}
 }
@@ -26,5 +25,7 @@ func TestAppend(t *testing.T) {
 	cl2.Add(&v.Vertex{-12.3, 23.3})
 	cl2.Add(&v.Vertex{1.342, 908.1})
 	cl1.Concat(cl2)
-
+	if cList.Len() != 3 {
+		t.Errorf("Cluster list has length", cList.Len())
+	}
 }
