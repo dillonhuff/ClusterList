@@ -17,6 +17,14 @@ func (c *ClusterList) Len() int {
 	return c.length
 }
 
+func (c *ClusterList) Front() *v.Vertex{
+	return c.front.v
+}
+
+func (c *ClusterList) Back() *v.Vertex {
+	return c.back.v
+}
+
 func (c *ClusterList) Add(v *v.Vertex) {
 	vNode := &vertexNode{c.front, v}
 	c.front = vNode
